@@ -174,8 +174,13 @@ section{padding:72px 48px;}
 #expertise{background:var(--navy);}
 .exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(168,178,188,0.05);}
 .exp-item{background:var(--navy);padding:28px 24px;transition:background .2s;}
+.exp-item:nth-child(2){background:#041e40;}
+.exp-item:nth-child(3){background:#031a36;}
+.exp-item:nth-child(4){background:#052348;}
+.exp-item:nth-child(5){background:#031830;}
+.exp-item:nth-child(6){background:#042044;}
 .exp-item:hover{background:var(--navy2);}
-.exp-item-num{font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;color:rgba(168,178,188,0.08);margin-bottom:10px;line-height:1;}
+.exp-item-num{font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;color:rgba(168,178,188,0.35);margin-bottom:10px;line-height:1;}
 .exp-item-line{width:24px;height:1.5px;background:var(--steel);margin-bottom:12px;}
 .exp-item-title{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#fff;margin-bottom:8px;}
 .exp-item-desc{font-size:11px;color:rgba(168,178,188,0.5);line-height:1.7;font-weight:300;}
@@ -195,7 +200,7 @@ section{padding:72px 48px;}
 .parcours-body{}
 .parcours-status{
   display:inline-block;font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  background:var(--steel);color:var(--navy);padding:2px 8px;margin-bottom:8px;
+  background:#C8A84B;color:#021E3A;padding:2px 8px;margin-bottom:8px;
 }
 .parcours-status-past{background:transparent;color:var(--steel);border:1px solid var(--steel-light);}
 .parcours-title{font-family:'Outfit',sans-serif;font-size:16px;font-weight:600;color:var(--navy);margin-bottom:6px;}
@@ -203,10 +208,26 @@ section{padding:72px 48px;}
 
 /* ===================== CHIFFRES ===================== */
 #chiffres{background:#fff;}
-.chiffres-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--steel-light);}
+.chiffres-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--steel-light);}
 .chiffre-item{background:#fff;padding:32px 20px;text-align:center;}
 .chiffre-val{font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:8px;}
 .chiffre-label{font-size:10px;color:var(--text-muted);line-height:1.5;font-weight:300;}
+
+/* ===================== PRESSE TABS ===================== */
+.presse-tabs{display:flex;gap:4px;margin-bottom:32px;flex-wrap:wrap;}
+.ptab{
+  font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  padding:8px 18px;cursor:pointer;border:1px solid var(--steel-light);
+  background:transparent;color:var(--text-muted);transition:all .2s;
+}
+.ptab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.ptab:hover:not(.active){background:var(--bg-light);}
+.presse-panel{display:none;}
+.presse-panel.active{display:block;}
+
+/* Hide duplicate tabs based on language */
+body:not(.en) [data-fr].ptab ~ [data-en].ptab,
+body.en [data-fr].ptab{display:none;}
 
 /* ===================== PRESSE ===================== */
 #presse{background:var(--bg-light);}
@@ -241,7 +262,10 @@ section{padding:72px 48px;}
 #engagement{background:var(--navy);}
 .eng-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(168,178,188,0.08);}
 .eng-item{background:var(--navy);padding:24px 28px;display:flex;gap:20px;align-items:flex-start;}
-.eng-num{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:rgba(168,178,188,0.1);line-height:1;flex-shrink:0;}
+.eng-item:nth-child(2){background:#041e40;}
+.eng-item:nth-child(3){background:#031a36;}
+.eng-item:nth-child(4){background:#052348;}
+.eng-num{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:rgba(168,178,188,0.35);line-height:1;flex-shrink:0;}
 .eng-body{}
 .eng-org{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#fff;margin-bottom:5px;}
 .eng-role{font-size:10px;color:rgba(168,178,188,0.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
@@ -358,26 +382,24 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
 </section>
 
 <!-- ===================== STATS BAR ===================== -->
-<div class="stats-bar">
+<div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
   <div class="stat">
-    <div class="stat-val outfit">25+</div>
-    <div class="stat-label" data-fr>Ans d'expérience</div>
-    <div class="stat-label" data-en>Years experience</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>1 lancement ex nihilo à succès</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-en>1 successful company launch from scratch</div>
+    <div class="stat-label" data-fr>Kapital Assurances — fondé en 2007</div>
+    <div class="stat-label" data-en>Kapital Assurances — founded in 2007</div>
   </div>
   <div class="stat">
-    <div class="stat-val outfit">14</div>
-    <div class="stat-label" data-fr>Pays CIMA</div>
-    <div class="stat-label" data-en>CIMA countries</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>3 intégrations M&amp;A réussies</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-en>3 successful M&amp;A integrations</div>
+    <div class="stat-label" data-fr>Colina → Saham → Sanlam → SanlamAllianz (mai 2024)</div>
+    <div class="stat-label" data-en>Colina → Saham → Sanlam → SanlamAllianz (May 2024)</div>
   </div>
   <div class="stat">
-    <div class="stat-val outfit">3</div>
-    <div class="stat-label" data-fr>Mandats actifs</div>
-    <div class="stat-label" data-en>Active mandates</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val outfit">Dakar</div>
-    <div class="stat-label" data-fr>Base</div>
-    <div class="stat-label" data-en>Based in</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>De dernier rang à 3<sup style="font-size:9px">e</sup> du marché</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-en>From last to 3<sup style="font-size:9px">rd</sup> rank in market</div>
+    <div class="stat-label" data-fr>SanlamAllianz Sénégal — 2008 à 2024</div>
+    <div class="stat-label" data-en>SanlamAllianz Senegal — 2008 to 2024</div>
   </div>
 </div>
 
@@ -498,8 +520,8 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
   <div class="parcours-list">
 
     <div class="parcours-item">
-      <div class="parcours-date" data-fr>En cours</div>
-      <div class="parcours-date" data-en>Present</div>
+      <div class="parcours-date" data-fr>Depuis Août 2024</div>
+      <div class="parcours-date" data-en>Since August 2024</div>
       <div class="parcours-divider"></div>
       <div class="parcours-body">
         <span class="parcours-status" data-fr>En cours</span>
@@ -547,7 +569,7 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
         <div class="parcours-title" data-fr>Directeur Général — Colina / Saham / Sanlam / SanlamAllianz Sénégal</div>
         <div class="parcours-title" data-en>General Manager — Colina / Saham / Sanlam / SanlamAllianz Senegal</div>
         <div class="parcours-desc" data-fr>13 ans à la tête de deux entités d'un groupe international (vie &amp; non-vie). De dernier rang en 2008 à la 3ème place du marché sénégalais en 2024. 3 intégrations de groupe réussies.</div>
-        <div class="parcours-desc" data-en>13 years leading two entities of an international group (life &amp; non-life). From last place in 2008 to 3rd on the Senegalese market in 2024. 3 successful group integrations.</div>
+        <div class="parcours-desc" data-en>13 years leading two entities of an international group (life &amp; non-life).<br>From last place in 2008 to 3<sup>rd</sup> on the Senegalese market in 2024.<br>3 successful group integrations: Colina (Ivoirien) → Saham (Morocco) → Sanlam (South Africa) → SanlamAllianz, completed in May 2024.</div>
       </div>
     </div>
 
@@ -583,31 +605,62 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
 
 <!-- ===================== CHIFFRES ===================== -->
 <section id="chiffres" style="padding:0;">
-  <div class="chiffres-grid">
+  <div class="chiffres-grid" style="grid-template-columns:repeat(4,1fr);">
     <div class="chiffre-item">
       <div class="chiffre-val outfit">3<sup style="font-size:18px;vertical-align:super;">e</sup></div>
       <div class="chiffre-label" data-fr>rang du marché sénégalais</div>
       <div class="chiffre-label" data-en>Senegalese market rank</div>
+      <div class="chiffre-sub" data-fr>de dernier en 2008 à 3<sup style="font-size:9px">e</sup> en 2024</div>
+      <div class="chiffre-sub" data-en>from last in 2008 to 3<sup style="font-size:9px">rd</sup> in 2024</div>
     </div>
     <div class="chiffre-item">
-      <div class="chiffre-val outfit">4</div>
-      <div class="chiffre-label" data-fr>groupes internationaux intégrés</div>
-      <div class="chiffre-label" data-en>International groups integrated</div>
+      <div class="chiffre-val outfit">16</div>
+      <div class="chiffre-label" data-fr>ans admin. compagnie d'assurance</div>
+      <div class="chiffre-label" data-en>Years as insurance company director</div>
+      <div class="chiffre-sub" data-fr>Colina → SanlamAllianz</div>
+      <div class="chiffre-sub" data-en>Colina → SanlamAllianz</div>
     </div>
     <div class="chiffre-item">
-      <div class="chiffre-val outfit">13</div>
-      <div class="chiffre-label" data-fr>ans de direction générale</div>
-      <div class="chiffre-label" data-en>Years as General Manager</div>
+      <div class="chiffre-val outfit">18</div>
+      <div class="chiffre-label" data-fr>ans admin. société de courtage</div>
+      <div class="chiffre-label" data-en>Years managing a brokerage firm</div>
+      <div class="chiffre-sub" data-fr>Kapital Assurances — depuis 2007</div>
+      <div class="chiffre-sub" data-en>Kapital Assurances — since 2007</div>
     </div>
     <div class="chiffre-item">
-      <div class="chiffre-val outfit">14</div>
-      <div class="chiffre-label" data-fr>pays CIMA dans le réseau</div>
-      <div class="chiffre-label" data-en>CIMA countries in network</div>
+      <div class="chiffre-val outfit">6</div>
+      <div class="chiffre-label" data-fr>ans — Pool Oil &amp; Gas</div>
+      <div class="chiffre-label" data-en>Years — Oil &amp; Gas Pool</div>
+      <div class="chiffre-sub" data-fr>Président fondateur 2018–2024</div>
+      <div class="chiffre-sub" data-en>Founding President 2018–2024</div>
     </div>
     <div class="chiffre-item">
       <div class="chiffre-val outfit">4<sup style="font-size:18px;vertical-align:super;">e</sup></div>
-      <div class="chiffre-label" data-fr>place Kapassur en 2 ans</div>
-      <div class="chiffre-label" data-en>Kapassur rank in 2 years</div>
+      <div class="chiffre-label" data-fr>rang Kapassur en primes de placement</div>
+      <div class="chiffre-label" data-en>Kapassur rank by placement premiums</div>
+      <div class="chiffre-sub" data-fr>de 12<sup style="font-size:9px">e</sup> à 4<sup style="font-size:9px">e</sup> en 2 ans</div>
+      <div class="chiffre-sub" data-en>from 12<sup style="font-size:9px">th</sup> to 4<sup style="font-size:9px">th</sup> in 2 years</div>
+    </div>
+    <div class="chiffre-item">
+      <div class="chiffre-val outfit" style="font-size:clamp(24px,3vw,36px);">Réseau</div>
+      <div class="chiffre-label" data-fr>CIMA · UEMOA · MENA · Europe</div>
+      <div class="chiffre-label" data-en>CIMA · UEMOA · MENA · Europe</div>
+      <div class="chiffre-sub" data-fr>réseau d'affaires &amp; relations internationales</div>
+      <div class="chiffre-sub" data-en>international business &amp; professional network</div>
+    </div>
+    <div class="chiffre-item">
+      <div class="chiffre-val outfit" style="font-size:clamp(24px,3vw,36px);">FSSA</div>
+      <div class="chiffre-label" data-fr>Fédération Sénégalaise des Assurances</div>
+      <div class="chiffre-label" data-en>Senegalese Insurance Federation</div>
+      <div class="chiffre-sub" data-fr>administrateur — organisation professionnelle</div>
+      <div class="chiffre-sub" data-en>director — professional body</div>
+    </div>
+    <div class="chiffre-item">
+      <div class="chiffre-val outfit">8 Mds</div>
+      <div class="chiffre-label" data-fr>FCFA sous gestion chez Kapassur</div>
+      <div class="chiffre-label" data-en>FCFA under management at Kapassur</div>
+      <div class="chiffre-sub" data-fr>en moins d'un an (2024/25)</div>
+      <div class="chiffre-sub" data-en>in less than one year (2024/25)</div>
     </div>
   </div>
 </section>
@@ -618,102 +671,318 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
     <span class="section-num">04 — <span data-fr>Presse &amp; Médias</span><span data-en>Press &amp; Media</span></span>
     <div class="section-rule"></div>
   </div>
-  <div class="presse-grid">
+  <!-- TABS -->
+  <div class="presse-tabs" role="tablist">
+    <button class="ptab active" data-tab="prix" data-fr>Prix &amp; Distinctions</button>
+    <button class="ptab active" data-tab="prix" data-en>Awards &amp; Distinctions</button>
+    <button class="ptab" data-tab="panels" data-fr>Panels &amp; Événements</button>
+    <button class="ptab" data-tab="panels" data-en>Panels &amp; Events</button>
+    <button class="ptab" data-tab="presse" data-fr>Presse &amp; Médias</button>
+    <button class="ptab" data-tab="presse" data-en>Press &amp; Media</button>
+    <button class="ptab" data-tab="rse" data-fr>RSE &amp; Engagement</button>
+    <button class="ptab" data-tab="rse" data-en>CSR &amp; Commitment</button>
+  </div>
 
-    <a class="presse-card" href="https://www.financialafrik.com/2025/11/24/kapital-assurances-senegal-leffet-majdi-yassine" target="_blank" rel="noopener">
-      <div class="presse-card-accent"></div>
-      <div class="presse-card-body">
-        <div class="presse-card-source">Financial Afrik</div>
-        <div class="presse-card-title" data-fr>« Kapital Assurances Sénégal : l'effet Majdi Yassine, 8 milliards FCFA sous gestion en un an »</div>
-        <div class="presse-card-title" data-en>« Kapital Assurances Senegal: the Majdi Yassine effect, 8 billion FCFA under management in one year »</div>
-        <div class="presse-card-date">2025</div>
+  <!-- TAB: PRIX -->
+  <div class="presse-panel active" id="tab-prix">
+    <div class="presse-grid">
+      <a class="presse-card" href="https://www.financialafrik.com/2025/11/24/kapital-assurances-senegal-leffet-majdi-yassine-8-milliards-fcfa-sous-gestion-en-un-an/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Financial Afrik</div>
+          <div class="presse-card-title" data-fr>« L'effet Majdi Yassine — 8 milliards FCFA sous gestion en un an »</div>
+          <div class="presse-card-title" data-en>« The Majdi Yassine effect — 8 billion FCFA under management in one year »</div>
+          <div class="presse-card-date">2025</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://www.financialafrik.com/2018/12/16/les-100-qui-transforment-lafrique-liste-complete/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Financial Afrik</div>
+          <div class="presse-card-title" data-fr>« Les 100 qui transforment l'Afrique » — Top 100 personnalités assurance</div>
+          <div class="presse-card-title" data-en>« The 100 transforming Africa » — Top 100 insurance personalities</div>
+          <div class="presse-card-date">2018</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://www.atlas-mag.net/fr/articles/colina-senegal-remporte-la-palme-de-la-compagnie-la-plus-dynamique" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Atlas Magazine</div>
+          <div class="presse-card-title" data-fr>Colina Sénégal remporte la palme de la compagnie la plus dynamique</div>
+          <div class="presse-card-title" data-en>Colina Senegal wins the award for most dynamic insurance company</div>
+          <div class="presse-card-date">2015</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TAB: PANELS -->
+  <div class="presse-panel" id="tab-panels">
+    <div class="presse-grid">
+      <a class="presse-card" href="https://www.linkedin.com/posts/majdiyassine_%C3%A9conomie-afrique-leadership-activity-6877964693781168130-6Ksa" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">LinkedIn</div>
+          <div class="presse-card-title" data-fr>Panel Économie &amp; Leadership Afrique</div>
+          <div class="presse-card-title" data-en>Africa Economy &amp; Leadership Panel</div>
+          <div class="presse-card-date">2022</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+      <a class="presse-card" href="https://www.linkedin.com/posts/majdiyassine_tr%C3%A8s-heureux-de-participer-ce-jeudi-13-octobre-activity-6985551458855190528-H_S4" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">LinkedIn</div>
+          <div class="presse-card-title" data-fr>Panel Assurance &amp; Finance — Dakar 2022</div>
+          <div class="presse-card-title" data-en>Insurance &amp; Finance Panel — Dakar 2022</div>
+          <div class="presse-card-date">2022</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+      <a class="presse-card" href="https://www.linkedin.com/posts/majdiyassine_africa-kebetu-senegal-activity-6928639390093074432-ohE5/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">LinkedIn</div>
+          <div class="presse-card-title" data-fr>Kébétu Africa — Stratégie, compétitivité, Sénégal</div>
+          <div class="presse-card-title" data-en>Kébétu Africa — Strategy, competitiveness, Senegal</div>
+          <div class="presse-card-date">2022</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+      <a class="presse-card" href="http://2019.rencontresafrica.org/member/majdi-yassine/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Rencontres Africa</div>
+          <div class="presse-card-title" data-fr>Forum Rencontres Africa — Paris 2019</div>
+          <div class="presse-card-title" data-en>Rencontres Africa Forum — Paris 2019</div>
+          <div class="presse-card-date">2019 · Paris</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+      <a class="presse-card" href="https://www.linkedin.com/posts/xpertize-maroc_xpertizeafrica-panel2025-dakar2025-activity-7325112111104155648-YkyI" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Xpertize Africa</div>
+          <div class="presse-card-title" data-fr>Panel Xpertize Africa — Dakar 2025</div>
+          <div class="presse-card-title" data-en>Xpertize Africa Panel — Dakar 2025</div>
+          <div class="presse-card-date">2025 · Dakar</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+      <a class="presse-card" href="https://www.linkedin.com/posts/majdiyassine_delighted-to-take-part-tomorrow-in-the-structured-activity-7376715211954708480-1o8U" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">LinkedIn</div>
+          <div class="presse-card-title" data-fr>Structured Finance for Africa Forum (SFA) — panel speaker</div>
+          <div class="presse-card-title" data-en>Structured Finance for Africa Forum (SFA) — panel speaker</div>
+          <div class="presse-card-date">2025</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+      <a class="presse-card" href="https://lesoleil.sn/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Le Soleil</div>
+          <div class="presse-card-title" data-fr>Audience accordée par le Président Bassirou Faye — délégation secteur assurance</div>
+          <div class="presse-card-title" data-en>Audience with President Bassirou Faye — insurance sector delegation</div>
+          <div class="presse-card-date">2024</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- TAB: PRESSE -->
+  <div class="presse-panel" id="tab-presse">
+    <div class="presse-grid">
+      <a class="presse-card" href="https://reussirbusiness.com/assurances-pool-senegalais-oil-gas-contrat/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Réussir Business</div>
+          <div class="presse-card-title" data-fr>Le Pool sénégalais Oil &amp; Gas décroche le contrat de l'année</div>
+          <div class="presse-card-title" data-en>Senegalese Oil &amp; Gas Pool wins contract of the year</div>
+          <div class="presse-card-date">2022</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://reussirbusiness.com/assurances-saham-assurances-devient-sanlam/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Réussir Business</div>
+          <div class="presse-card-title" data-fr>Saham Assurances devient Sanlam — conférence de presse</div>
+          <div class="presse-card-title" data-en>Saham Assurances becomes Sanlam — press conference</div>
+          <div class="presse-card-date">2021</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://reussirbusiness.com/rassurantes-perspectives-pour-les-assurances-du-petrole-et-du-gaz/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Réussir Business</div>
+          <div class="presse-card-title" data-fr>Rassurantes perspectives pour les assurances du pétrole et du gaz</div>
+          <div class="presse-card-title" data-en>Reassuring prospects for oil and gas insurance</div>
+          <div class="presse-card-date">2020</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://reussirbusiness.com/colina-devient-saham-assurances-nouveaux-defis/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Réussir Business</div>
+          <div class="presse-card-title" data-fr>Colina devient Saham Assurances — nouveaux défis</div>
+          <div class="presse-card-title" data-en>Colina becomes Saham Assurances — new challenges</div>
+          <div class="presse-card-date">2015</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://www.atlas-mag.net/fr/articles/colina-senegal-une-compagnie-qui-le-vent-en-poupe" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Atlas Magazine</div>
+          <div class="presse-card-title" data-fr>Colina Sénégal — une compagnie qui a le vent en poupe</div>
+          <div class="presse-card-title" data-en>Colina Senegal — a company on the rise</div>
+          <div class="presse-card-date">2014</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://www.africabusinessplus.com/fr/828575/comment-lafrique-est-en-train-de-se-dessiner-son-propre-modele-de-banque-privee/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Africa Business+</div>
+          <div class="presse-card-title" data-fr>L'Afrique se dessine son propre modèle de banque privée</div>
+          <div class="presse-card-title" data-en>Africa designs its own private banking model</div>
+          <div class="presse-card-date">2021</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://fr.slideshare.net/slideshow/magazine-reussir-assurance-2017-sngal/77809681" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Réussir — Magazine Assurance</div>
+          <div class="presse-card-title" data-fr>Magazine Réussir Assurance Sénégal 2017</div>
+          <div class="presse-card-title" data-en>Réussir Insurance Magazine Senegal 2017</div>
+          <div class="presse-card-date">2017</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://www.jeuneafrique.com/" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Jeune Afrique</div>
+          <div class="presse-card-title" data-fr>Marché de l'assurance en Afrique subsaharienne — analyse et perspectives</div>
+          <div class="presse-card-title" data-en>Insurance market in sub-Saharan Africa — analysis and outlook</div>
+          <div class="presse-card-date">2018</div>
+        </div>
+        <div class="presse-card-type" data-fr>Lire</div>
+        <div class="presse-card-type" data-en>Read</div>
+      </a>
+      <a class="presse-card" href="https://www.linkedin.com/posts/majdiyassine_le-directeur-g%C3%A9n%C3%A9ral-de-saham-assurance-monsieur-activity-6791077000703479808-iKh8" target="_blank" rel="noopener">
+        <div class="presse-card-accent"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">LinkedIn</div>
+          <div class="presse-card-title" data-fr>Le DG de Saham Assurance — interview sur le marché sénégalais</div>
+          <div class="presse-card-title" data-en>Saham Assurance CEO — interview on the Senegalese market</div>
+          <div class="presse-card-date">2021</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+    </div>
+    <!-- Vidéos -->
+    <div style="margin-top:32px;">
+      <div class="label" style="margin-bottom:16px;" data-fr>Vidéos</div>
+      <div class="label" style="margin-bottom:16px;" data-en>Videos</div>
+      <div class="presse-grid">
+        <a class="presse-card" href="https://www.youtube.com/watch?v=MnTk5jh25zg" target="_blank" rel="noopener">
+          <div class="presse-card-accent" style="background:#C83030;"></div>
+          <div class="presse-card-body">
+            <div class="presse-card-source">Le Soleil TV</div>
+            <div class="presse-card-title" data-fr>Interview — Administrateur Directeur Général, Sanlam Group</div>
+            <div class="presse-card-title" data-en>Interview — General Manager, Sanlam Group</div>
+            <div class="presse-card-date">2022</div>
+          </div>
+          <div class="presse-card-type">▶ Vidéo</div>
+        </a>
+        <a class="presse-card" href="https://www.youtube.com/@leraltv" target="_blank" rel="noopener">
+          <div class="presse-card-accent" style="background:#C83030;"></div>
+          <div class="presse-card-body">
+            <div class="presse-card-source">Leral TV</div>
+            <div class="presse-card-title" data-fr>Interview — Marché de l'assurance au Sénégal</div>
+            <div class="presse-card-title" data-en>Interview — Insurance market in Senegal</div>
+            <div class="presse-card-date">2022</div>
+          </div>
+          <div class="presse-card-type">▶ Vidéo</div>
+        </a>
+        <a class="presse-card" href="https://www.rfm.sn" target="_blank" rel="noopener">
+          <div class="presse-card-accent" style="background:#C83030;"></div>
+          <div class="presse-card-body">
+            <div class="presse-card-source">RFM Sénégal</div>
+            <div class="presse-card-title" data-fr>Émission radio — Assurance et économie sénégalaise</div>
+            <div class="presse-card-title" data-en>Radio programme — Insurance and the Senegalese economy</div>
+            <div class="presse-card-date">2021</div>
+          </div>
+          <div class="presse-card-type">▶ Audio</div>
+        </a>
       </div>
-      <div class="presse-card-type" data-fr>Lire</div>
-      <div class="presse-card-type" data-en>Read</div>
-    </a>
+    </div>
+  </div>
 
-    <a class="presse-card" href="https://www.financialafrik.com/2018/12/16/les-100-qui-transforment-lafrique" target="_blank" rel="noopener">
-      <div class="presse-card-accent"></div>
-      <div class="presse-card-body">
-        <div class="presse-card-source">Financial Afrik</div>
-        <div class="presse-card-title" data-fr>« Les 100 qui transforment l'Afrique » — Top 100 personnalités assurance Afrique</div>
-        <div class="presse-card-title" data-en>« The 100 who are transforming Africa » — Top 100 insurance personalities in Africa</div>
-        <div class="presse-card-date">2018</div>
+  <!-- TAB: RSE -->
+  <div class="presse-panel" id="tab-rse">
+    <div class="presse-grid">
+      <a class="presse-card" href="https://www.facebook.com/share/1CeAzVTNZR/" target="_blank" rel="noopener">
+        <div class="presse-card-accent" style="background:#4B7A3A;"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Facebook</div>
+          <div class="presse-card-title" data-fr>Action RSE — Rotary Club Dakar Les Almadies</div>
+          <div class="presse-card-title" data-en>CSR action — Rotary Club Dakar Les Almadies</div>
+          <div class="presse-card-date">2024</div>
+        </div>
+        <div class="presse-card-type" data-fr>Voir</div>
+        <div class="presse-card-type" data-en>View</div>
+      </a>
+      <div class="presse-card" style="opacity:0.6;">
+        <div class="presse-card-accent" style="background:#4B7A3A;"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">Rotary District 9101</div>
+          <div class="presse-card-title" data-fr>Don de matériel médical — Maternité de Wakhinane &amp; Hôpital Abass Ndao</div>
+          <div class="presse-card-title" data-en>Medical equipment donation — Wakhinane Maternity &amp; Abass Ndao Hospital</div>
+          <div class="presse-card-date">2023–2024</div>
+        </div>
+        <div class="presse-card-type" data-fr>Rotary</div>
+        <div class="presse-card-type" data-en>Rotary</div>
       </div>
-      <div class="presse-card-type" data-fr>Lire</div>
-      <div class="presse-card-type" data-en>Read</div>
-    </a>
-
-    <a class="presse-card" href="https://reussirbusiness.com/assurances-pool-senegalais-oil-gas-contrat/" target="_blank" rel="noopener">
-      <div class="presse-card-accent"></div>
-      <div class="presse-card-body">
-        <div class="presse-card-source">Réussir Business</div>
-        <div class="presse-card-title" data-fr>« Le Pool sénégalais Oil &amp; Gas décroche avec brio le contrat de l'année »</div>
-        <div class="presse-card-title" data-en>« The Senegalese Oil &amp; Gas Pool brilliantly wins contract of the year »</div>
-        <div class="presse-card-date">2022</div>
+      <div class="presse-card" style="opacity:0.6;">
+        <div class="presse-card-accent" style="background:#4B7A3A;"></div>
+        <div class="presse-card-body">
+          <div class="presse-card-source">JCI Dakar Almadies</div>
+          <div class="presse-card-title" data-fr>Mandats présidentiels JCI — programmes de développement local</div>
+          <div class="presse-card-title" data-en>JCI presidential mandates — local development programmes</div>
+          <div class="presse-card-date">2018–2019</div>
+        </div>
+        <div class="presse-card-type">JCI</div>
       </div>
-      <div class="presse-card-type" data-fr>Lire</div>
-      <div class="presse-card-type" data-en>Read</div>
-    </a>
-
-    <a class="presse-card" href="https://www.youtube.com/watch?v=MnTk5jh25zg" target="_blank" rel="noopener">
-      <div class="presse-card-accent"></div>
-      <div class="presse-card-body">
-        <div class="presse-card-source">Le Soleil TV</div>
-        <div class="presse-card-title" data-fr>Interview — Administrateur Directeur Général, Sanlam Group</div>
-        <div class="presse-card-title" data-en>Interview — General Manager, Sanlam Group</div>
-        <div class="presse-card-date">2022</div>
-      </div>
-      <div class="presse-card-type">Vidéo</div>
-    </a>
-
-    <a class="presse-card" href="https://www.youtube.com/@leraltv" target="_blank" rel="noopener">
-      <div class="presse-card-accent"></div>
-      <div class="presse-card-body">
-        <div class="presse-card-source">Leral TV</div>
-        <div class="presse-card-title" data-fr>Interview — Marché de l'assurance au Sénégal</div>
-        <div class="presse-card-title" data-en>Interview — Insurance market in Senegal</div>
-        <div class="presse-card-date">2022</div>
-      </div>
-      <div class="presse-card-type">Vidéo</div>
-    </a>
-
-    <a class="presse-card" href="https://reussirbusiness.com/assurances-saham-assurances-devient-sanlam/" target="_blank" rel="noopener">
-      <div class="presse-card-accent"></div>
-      <div class="presse-card-body">
-        <div class="presse-card-source">Réussir Business</div>
-        <div class="presse-card-title" data-fr>Saham Assurances devient Sanlam — conférence de presse animée par Majdi Yassine</div>
-        <div class="presse-card-title" data-en>Saham Assurances becomes Sanlam — press conference by Majdi Yassine</div>
-        <div class="presse-card-date">2021</div>
-      </div>
-      <div class="presse-card-type" data-fr>Lire</div>
-      <div class="presse-card-type" data-en>Read</div>
-    </a>
-
-    <a class="presse-card" href="https://www.africabusinessplus.com/fr/828575/comment-lafrique-est-en-train-de-se" target="_blank" rel="noopener">
-      <div class="presse-card-accent"></div>
-      <div class="presse-card-body">
-        <div class="presse-card-source">Africa Business+</div>
-        <div class="presse-card-title" data-fr>« Relance des économies africaines : le mode d'emploi »</div>
-        <div class="presse-card-title" data-en>« Reviving African economies: how to do it »</div>
-        <div class="presse-card-date">2021</div>
-      </div>
-      <div class="presse-card-type" data-fr>Lire</div>
-      <div class="presse-card-type" data-en>Read</div>
-    </a>
-
-    <a class="presse-card" href="http://2019.rencontresafrica.org/member/majdi-yassine/" target="_blank" rel="noopener">
-      <div class="presse-card-accent"></div>
-      <div class="presse-card-body">
-        <div class="presse-card-source">Rencontres Africa</div>
-        <div class="presse-card-title" data-fr>Forum — Rencontres Africa, Paris 2019</div>
-        <div class="presse-card-title" data-en>Forum — Rencontres Africa, Paris 2019</div>
-        <div class="presse-card-date">2019 · Paris</div>
-      </div>
-      <div class="presse-card-type" data-fr>Voir</div>
-      <div class="presse-card-type" data-en>View</div>
-    </a>
-
+    </div>
   </div>
 </section>
 
@@ -835,6 +1104,19 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
 <script>
 // ===================== LANG TOGGLE =====================
 let currentLang = 'fr';
+function initTabs(){
+  document.querySelectorAll('.ptab').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const tab=btn.dataset.tab;
+      document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.presse-panel').forEach(p=>p.classList.remove('active'));
+      document.querySelectorAll('.ptab[data-tab="'+tab+'"]').forEach(b=>b.classList.add('active'));
+      const panel=document.getElementById('tab-'+tab);
+      if(panel)panel.classList.add('active');
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded',initTabs);
 function toggleLang(){
   currentLang = currentLang === 'fr' ? 'en' : 'fr';
   if(currentLang === 'en'){

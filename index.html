@@ -182,8 +182,8 @@ section{padding:72px 48px;}
 .exp-item:hover{background:var(--navy2);}
 .exp-item-num{font-family:'Outfit',sans-serif;font-size:36px;font-weight:800;color:rgba(168,178,188,0.35);margin-bottom:10px;line-height:1;}
 .exp-item-line{width:24px;height:1.5px;background:var(--steel);margin-bottom:12px;}
-.exp-item-title{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#fff;margin-bottom:8px;}
-.exp-item-desc{font-size:11px;color:rgba(168,178,188,0.5);line-height:1.7;font-weight:300;}
+.exp-item-title{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#ffffff;margin-bottom:8px;text-shadow:0 0 1px rgba(255,255,255,0.1);}
+.exp-item-desc{font-size:11px;color:rgba(168,178,188,0.72);line-height:1.7;font-weight:300;}
 
 /* ===================== PARCOURS ===================== */
 #parcours{background:var(--bg-light);}
@@ -268,8 +268,8 @@ body.en [data-fr].ptab{display:none;}
 .eng-num{font-family:'Outfit',sans-serif;font-size:32px;font-weight:800;color:rgba(168,178,188,0.35);line-height:1;flex-shrink:0;}
 .eng-body{}
 .eng-org{font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;color:#fff;margin-bottom:5px;}
-.eng-role{font-size:10px;color:rgba(168,178,188,0.5);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
-.eng-desc{font-size:11px;color:rgba(168,178,188,0.4);line-height:1.6;font-weight:300;}
+.eng-role{font-size:10px;color:rgba(168,178,188,0.8);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.eng-desc{font-size:11px;color:rgba(168,178,188,0.68);line-height:1.6;font-weight:300;}
 
 /* ===================== CONTACT ===================== */
 #contact{background:#fff;padding:72px 48px;}
@@ -384,10 +384,10 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
 <!-- ===================== STATS BAR ===================== -->
 <div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
   <div class="stat">
-    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>1 lancement ex nihilo à succès</div>
-    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-en>1 successful company launch from scratch</div>
-    <div class="stat-label" data-fr>Kapital Assurances — fondé en 2007</div>
-    <div class="stat-label" data-en>Kapital Assurances — founded in 2007</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>2 lancements ex nihilo à succès</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-en>2 successful company launches from scratch</div>
+    <div class="stat-label" data-fr>Kapital (courtage + compagnie) — tous deux 1<sup style="font-size:8px">er</sup> tier du marché</div>
+    <div class="stat-label" data-en>Kapital (brokerage + insurance co.) — both 1<sup style="font-size:8px">st</sup> tier</div>
   </div>
   <div class="stat">
     <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>3 intégrations M&amp;A réussies</div>
@@ -396,8 +396,8 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
     <div class="stat-label" data-en>Colina → Saham → Sanlam → SanlamAllianz (May 2024)</div>
   </div>
   <div class="stat">
-    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>De dernier rang à 3<sup style="font-size:9px">e</sup> du marché</div>
-    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-en>From last to 3<sup style="font-size:9px">rd</sup> rank in market</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>De dernier rang en 2008 à 3<sup style="font-size:9px">e</sup> du marché en 2024</div>
+    <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-en>From last rank in 2008 to 3<sup style="font-size:9px">rd</sup> in market in 2024</div>
     <div class="stat-label" data-fr>SanlamAllianz Sénégal — 2008 à 2024</div>
     <div class="stat-label" data-en>SanlamAllianz Senegal — 2008 to 2024</div>
   </div>
@@ -561,13 +561,26 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
     </div>
 
     <div class="parcours-item">
+      <div class="parcours-date">2017 — 2024</div>
+      <div class="parcours-divider"></div>
+      <div class="parcours-body">
+        <span class="parcours-status parcours-status-past" data-fr>Terminé</span>
+        <span class="parcours-status parcours-status-past" data-en>Completed</span>
+        <div class="parcours-title" data-fr>Administrateur — Fédération Sénégalaise des Sociétés d'Assurance (FSSA)</div>
+        <div class="parcours-title" data-en>Director — Senegalese Insurance Companies Federation (FSSA)</div>
+        <div class="parcours-desc" data-fr>8 ans au sein de l'organisation patronale du secteur de l'assurance au Sénégal.<br>Participation à la définition des positions sectorielles, au dialogue avec les régulateurs (CRCA/CIMA) et à la promotion du marché.</div>
+        <div class="parcours-desc" data-en>8 years within the employers' body of the Senegalese insurance sector.<br>Contribution to defining sector positions, dialogue with regulators (CRCA/CIMA), and market development.</div>
+      </div>
+    </div>
+
+    <div class="parcours-item">
       <div class="parcours-date">2008 — 2024</div>
       <div class="parcours-divider"></div>
       <div class="parcours-body">
         <span class="parcours-status parcours-status-past" data-fr>Terminé</span>
         <span class="parcours-status parcours-status-past" data-en>Completed</span>
-        <div class="parcours-title" data-fr>Directeur Général — Colina / Saham / Sanlam / SanlamAllianz Sénégal</div>
-        <div class="parcours-title" data-en>General Manager — Colina / Saham / Sanlam / SanlamAllianz Senegal</div>
+        <div class="parcours-title" data-fr>CEO — Colina / Saham / Sanlam Sénégal</div>
+        <div class="parcours-title" data-en>CEO — Colina / Saham / Sanlam Senegal</div>
         <div class="parcours-desc" data-fr>13 ans à la tête de deux entités d'un groupe international (vie &amp; non-vie). De dernier rang en 2008 à la 3ème place du marché sénégalais en 2024. 3 intégrations de groupe réussies.</div>
         <div class="parcours-desc" data-en>13 years leading two entities of an international group (life &amp; non-life).<br>From last place in 2008 to 3<sup>rd</sup> on the Senegalese market in 2024.<br>3 successful group integrations: Colina (Ivoirien) → Saham (Morocco) → Sanlam (South Africa) → SanlamAllianz, completed in May 2024.</div>
       </div>
@@ -610,8 +623,8 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
       <div class="chiffre-val outfit">3<sup style="font-size:18px;vertical-align:super;">e</sup></div>
       <div class="chiffre-label" data-fr>rang du marché sénégalais</div>
       <div class="chiffre-label" data-en>Senegalese market rank</div>
-      <div class="chiffre-sub" data-fr>de dernier en 2008 à 3<sup style="font-size:9px">e</sup> en 2024</div>
-      <div class="chiffre-sub" data-en>from last in 2008 to 3<sup style="font-size:9px">rd</sup> in 2024</div>
+      <div class="chiffre-sub" data-fr>de dernier en 2008 à 3<sup style="font-size:9px">e</sup> en 2024<br>(marché sénégalais des assurances)</div>
+      <div class="chiffre-sub" data-en>from last in 2008 to 3<sup style="font-size:9px">rd</sup> in 2024<br>(Senegalese insurance market)</div>
     </div>
     <div class="chiffre-item">
       <div class="chiffre-val outfit">16</div>
@@ -621,11 +634,11 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
       <div class="chiffre-sub" data-en>Colina → SanlamAllianz</div>
     </div>
     <div class="chiffre-item">
-      <div class="chiffre-val outfit">18</div>
-      <div class="chiffre-label" data-fr>ans admin. société de courtage</div>
-      <div class="chiffre-label" data-en>Years managing a brokerage firm</div>
-      <div class="chiffre-sub" data-fr>Kapital Assurances — depuis 2007</div>
-      <div class="chiffre-sub" data-en>Kapital Assurances — since 2007</div>
+      <div class="chiffre-val outfit" style="font-size:clamp(20px,2.5vw,30px);">BOA CI</div>
+      <div class="chiffre-label" data-fr>Admin. indépendant &amp; Pdt Comité d'Audit</div>
+      <div class="chiffre-label" data-en>Independent Director &amp; Audit Committee Chair</div>
+      <div class="chiffre-sub" data-fr>Bank of Africa Côte d'Ivoire — depuis 2019</div>
+      <div class="chiffre-sub" data-en>Bank of Africa Côte d'Ivoire — since 2019</div>
     </div>
     <div class="chiffre-item">
       <div class="chiffre-val outfit">6</div>
@@ -638,8 +651,8 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
       <div class="chiffre-val outfit">4<sup style="font-size:18px;vertical-align:super;">e</sup></div>
       <div class="chiffre-label" data-fr>rang Kapassur en primes de placement</div>
       <div class="chiffre-label" data-en>Kapassur rank by placement premiums</div>
-      <div class="chiffre-sub" data-fr>de 12<sup style="font-size:9px">e</sup> à 4<sup style="font-size:9px">e</sup> en 2 ans</div>
-      <div class="chiffre-sub" data-en>from 12<sup style="font-size:9px">th</sup> to 4<sup style="font-size:9px">th</sup> in 2 years</div>
+      <div class="chiffre-sub" data-fr>de 12<sup style="font-size:9px">e</sup> à 4<sup style="font-size:9px">e</sup> en 2 ans (2024–2026)</div>
+      <div class="chiffre-sub" data-en>from 12<sup style="font-size:9px">th</sup> to 4<sup style="font-size:9px">th</sup> in 2 years (2024–2026)</div>
     </div>
     <div class="chiffre-item">
       <div class="chiffre-val outfit" style="font-size:clamp(24px,3vw,36px);">Réseau</div>
@@ -652,16 +665,10 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
       <div class="chiffre-val outfit" style="font-size:clamp(24px,3vw,36px);">FSSA</div>
       <div class="chiffre-label" data-fr>Fédération Sénégalaise des Assurances</div>
       <div class="chiffre-label" data-en>Senegalese Insurance Federation</div>
-      <div class="chiffre-sub" data-fr>administrateur — organisation professionnelle</div>
-      <div class="chiffre-sub" data-en>director — professional body</div>
+      <div class="chiffre-sub" data-fr>2017–2024 · 8 ans — organisation patronale</div>
+      <div class="chiffre-sub" data-en>2017–2024 · 8 years — employers' body</div>
     </div>
-    <div class="chiffre-item">
-      <div class="chiffre-val outfit">8 Mds</div>
-      <div class="chiffre-label" data-fr>FCFA sous gestion chez Kapassur</div>
-      <div class="chiffre-label" data-en>FCFA under management at Kapassur</div>
-      <div class="chiffre-sub" data-fr>en moins d'un an (2024/25)</div>
-      <div class="chiffre-sub" data-en>in less than one year (2024/25)</div>
-    </div>
+
   </div>
 </section>
 

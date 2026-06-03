@@ -347,6 +347,59 @@ footer{
   footer{flex-direction:column;gap:12px;text-align:center;}
 }
 
+@media(max-width:480px){
+  /* NAV */
+  nav{padding:12px 16px;}
+  .nav-back{display:none;}
+  .nav-logo{font-size:12px;letter-spacing:3px;}
+
+  /* HERO */
+  #hero{padding:88px 20px 48px;}
+  .hero-bg-text{font-size:clamp(60px,22vw,90px);right:-10px;}
+  .hero-tagline{font-size:13px;}
+  .hero-btns{flex-direction:column;gap:10px;align-items:flex-start;}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center;}
+
+  /* STATS BAR */
+  .stats-bar{flex-direction:column;gap:0;padding:0;}
+  .stat-item{padding:14px 20px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .stat-item:last-child{border-bottom:none;}
+
+  /* SECTIONS */
+  section{padding:40px 20px;}
+
+  /* PROFIL */
+  .profil-grid{grid-template-columns:1fr;gap:24px;}
+
+  /* EXPERTISE */
+  .exp-grid{grid-template-columns:1fr;}
+
+  /* PARCOURS */
+  .parcours-item{grid-template-columns:90px 1px 1fr;gap:0 12px;}
+  .parcours-date{font-size:9px;}
+
+  /* CHIFFRES */
+  .chiffres-grid{grid-template-columns:repeat(2,1fr);gap:20px;}
+  .chiffre-val{font-size:36px;}
+
+  /* PRESSE TABS */
+  .presse-tabs{gap:4px;flex-wrap:wrap;}
+  .ptab{font-size:8px;padding:6px 10px;letter-spacing:1px;}
+  .presse-grid{grid-template-columns:1fr;}
+
+  /* ENGAGEMENT */
+  .eng-grid{grid-template-columns:1fr;}
+
+  /* CONTACT */
+  .contact-grid{grid-template-columns:1fr;gap:24px;}
+  .form-row{flex-direction:column;gap:10px;}
+  .form-input{font-size:13px;}
+
+  /* FOOTER */
+  footer{flex-direction:column;gap:10px;text-align:center;padding:24px 20px;}
+  .footer-links{flex-wrap:wrap;justify-content:center;gap:12px;}
+}
+
 /* ===================== LANG SWITCH ===================== */
 [data-en]{display:none;}
 body.en [data-fr]{display:none;}

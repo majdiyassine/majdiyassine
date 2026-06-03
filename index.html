@@ -57,6 +57,9 @@ nav{
   background:transparent;
 }
 .nav-lang:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+.nav-back{font-size:9px;color:var(--steel);letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:5px;transition:color .2s;white-space:nowrap;}
+.nav-back:hover{color:var(--navy);}
+.nav-back::before{content:'←';font-size:11px;}
 
 /* ===================== HERO ===================== */
 #hero{
@@ -355,6 +358,7 @@ body.en span[data-en],body.en a[data-en]{display:inline;}
 
 <!-- ===================== NAV ===================== -->
 <nav>
+  <a class="nav-back" href="https://www.kapassur.com" target="_blank" rel="noopener">kapassur.com</a>
   <div class="nav-logo" onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">MY</div>
   <div class="nav-links">
     <span class="nav-link" onclick="scrollToSection('profil')"><span data-fr>Profil</span><span data-en>Profile</span></span>

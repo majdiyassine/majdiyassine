@@ -1111,12 +1111,12 @@ body.en span[data-en],body.en a[data-en]{display:inline;}
     <div class="contact-right">
       <form class="contact-form" onsubmit="handleSubmit(event)">
         <div class="form-row">
-          <input class="form-input" type="text" placeholder="Prénom / First name" required>
-          <input class="form-input" type="text" placeholder="Nom / Last name" required>
+          <input class="form-input" type="text" id="cf-prenom" placeholder="Prénom / First name" required>
+          <input class="form-input" type="text" id="cf-nom" placeholder="Nom / Last name" required>
         </div>
-        <input class="form-input" type="email" placeholder="Email" required>
-        <input class="form-input" type="text" placeholder="Organisation / Company">
-        <textarea class="form-input" placeholder="Message..." rows="4" required></textarea>
+        <input class="form-input" type="email" id="cf-email" placeholder="Email" required>
+        <input class="form-input" type="text" id="cf-org" placeholder="Organisation / Company">
+        <textarea class="form-input" id="cf-msg" placeholder="Message..." rows="4" required></textarea>
         <button class="form-submit" type="submit">
           <span data-fr>Envoyer le message</span>
           <span data-en>Send message</span>
@@ -1187,13 +1187,27 @@ window.addEventListener('scroll', () => {
 // ===================== FORM =====================
 function handleSubmit(e){
   e.preventDefault();
+  const prenom = document.getElementById('cf-prenom').value.trim();
+  const nom    = document.getElementById('cf-nom').value.trim();
+  const email  = document.getElementById('cf-email').value.trim();
+  const org    = document.getElementById('cf-org').value.trim();
+  const msg    = document.getElementById('cf-msg').value.trim();
+  const sujet  = encodeURIComponent('Contact via majdi.kapassur.com — ' + prenom + ' ' + nom);
+  const corps  = encodeURIComponent(
+    'De : ' + prenom + ' ' + nom + '\n' +
+    'Email : ' + email + '\n' +
+    (org ? 'Organisation : ' + org + '\n' : '') +
+    '\nMessage :\n' + msg
+  );
+  window.location.href = 'mailto:my@kapassur.com?subject=' + sujet + '&body=' + corps;
   const btn = e.target.querySelector('.form-submit');
-  btn.textContent = currentLang === 'fr' ? '✓ Message envoyé' : '✓ Message sent';
+  btn.textContent = currentLang === 'fr' ? '✓ Client mail ouvert' : '✓ Mail client opened';
   btn.style.background = '#03386D';
-  e.target.reset();
   setTimeout(() => {
-    btn.textContent = currentLang === 'fr' ? 'Envoyer le message' : 'Send message';
+    btn.innerHTML = '<span data-fr>Envoyer le message</span><span data-en>Send message</span>';
     btn.style.background = '';
+    e.target.reset();
+    toggleLang(); toggleLang(); // refresh lang display
   }, 3000);
 }
 

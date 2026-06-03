@@ -357,11 +357,11 @@ body.en span[data-en],body.en a[data-en],body.en div[data-en]{display:inline;}
 <nav>
   <div class="nav-logo" onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">MY</div>
   <div class="nav-links">
-    <span class="nav-link" onclick="scrollTo('profil')"><span data-fr>Profil</span><span data-en>Profile</span></span>
-    <span class="nav-link" onclick="scrollTo('expertise')"><span data-fr>Expertise</span><span data-en>Expertise</span></span>
-    <span class="nav-link" onclick="scrollTo('parcours')"><span data-fr>Parcours</span><span data-en>Career</span></span>
-    <span class="nav-link" onclick="scrollTo('presse')"><span data-fr>Presse</span><span data-en>Press</span></span>
-    <span class="nav-link" onclick="scrollTo('contact')">Contact</span>
+    <span class="nav-link" onclick="scrollToSection('profil')"><span data-fr>Profil</span><span data-en>Profile</span></span>
+    <span class="nav-link" onclick="scrollToSection('expertise')"><span data-fr>Expertise</span><span data-en>Expertise</span></span>
+    <span class="nav-link" onclick="scrollToSection('parcours')"><span data-fr>Parcours</span><span data-en>Career</span></span>
+    <span class="nav-link" onclick="scrollToSection('presse')"><span data-fr>Presse</span><span data-en>Press</span></span>
+    <span class="nav-link" onclick="scrollToSection('contact')">Contact</span>
   </div>
   <button class="nav-lang" onclick="toggleLang()" id="lang-btn">EN</button>
 </nav>
@@ -1156,7 +1156,7 @@ function toggleLang(){
 }
 
 // ===================== SCROLL =====================
-function scrollTo(id){
+function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
 }
 

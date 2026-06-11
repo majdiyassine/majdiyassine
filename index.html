@@ -337,7 +337,7 @@ footer{
   #hero{padding:100px 24px 60px;}
   .hero-photo{display:none;}
   section{padding:48px 24px;}
-  .stats-bar{padding:16px 24px;}
+  .stats-bar{grid-template-columns:1fr!important;padding:16px 24px;}
   .profil-grid,.contact-grid{grid-template-columns:1fr;gap:32px;}
   .profil-photo-wrap{display:none;}
   .exp-grid,.chiffres-grid{grid-template-columns:repeat(2,1fr);}
@@ -361,9 +361,9 @@ footer{
   .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center;}
 
   /* STATS BAR */
-  .stats-bar{flex-direction:column;gap:0;padding:0;}
-  .stat-item{padding:14px 20px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.08);}
-  .stat-item:last-child{border-bottom:none;}
+  .stats-bar{display:flex!important;flex-direction:column;gap:0;padding:0;}
+  .stat{padding:14px 20px;border-left:none!important;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .stat:last-child{border-bottom:none;}
 
   /* SECTIONS */
   section{padding:40px 20px;}
@@ -460,7 +460,7 @@ body.en span[data-en],body.en a[data-en]{display:inline;}
 </section>
 
 <!-- ===================== STATS BAR ===================== -->
-<div class="stats-bar" style="grid-template-columns:repeat(3,1fr);">
+<div class="stats-bar">
   <div class="stat">
     <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-fr>2 lancements ex nihilo à succès</div>
     <div class="stat-val outfit" style="font-size:15px;font-weight:600;line-height:1.4;" data-en>2 successful company launches from scratch</div>
